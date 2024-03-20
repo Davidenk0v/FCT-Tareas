@@ -8,8 +8,6 @@ public class SecretarioEmpleado implements Empleados {
 		return "Gestionar la agenda de los jefes";
 	}
 
-	
-	private CreacionInformes informeNuevo;
 
 	public CreacionInformes getInformeNuevo() {
 		return informeNuevo;
@@ -19,10 +17,33 @@ public class SecretarioEmpleado implements Empleados {
 		this.informeNuevo = informeNuevo;
 	}
 
+	public String getEmail() {
+		return email;
+	}
+	
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	
+	public String getNombreEmpresa() {
+		return nombreEmpresa;
+	}
+	
+	public void setNombreEmpresa(String nombreEmpresa) {
+		this.nombreEmpresa = nombreEmpresa;
+	}
+	
 	@Override
 	public String getInforme() {
 		// TODO Auto-generated method stub
 		return "Informe generado por el secretario " + informeNuevo.getInforme();
 	}
+	
+	private CreacionInformes informeNuevo;
+	
+	private String email;
+	
+	private String nombreEmpresa;
+
 
 }
