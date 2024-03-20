@@ -12,24 +12,11 @@
 <context:property-placeholder location="classpath:datosEmpresa.propiedades"/>
 <bean id="miInforme" class="spring.IoC.Informe"></bean>
 	
-<bean id="miEmpleado" class="spring.IoC.DirectorEmpleado">
+<bean id="miEmpleado" class="spring.IoC.DirectorEmpleado" init-method="init" destroy-method="destroy">
 
 <constructor-arg ref="miInforme"></constructor-arg>
 
-<property name="email" value="equipo_directivo@pildorasinformatias.es"></property>
-<property name="nombreEmpresa" value="Pildoras informaticas"></property>
-
 </bean>
 
-<bean id="secretarioEmpleado" class="spring.IoC.SecretarioEmpleado">
-
-<property name="informeNuevo" ref="miInforme"></property>
-<property name="email" value="${email}"></property>
-<property name="nombreEmpresa" value="${nombreEmpresa}"></property>
-
-
-
-
-</bean>
 
 </beans>
